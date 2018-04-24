@@ -4,8 +4,11 @@ This code is based of of the following youtube tutorial series by thebennybox:
 https://www.youtube.com/watch?v=ftiKrP3gW3k&list=PLEETnX-uPtBXT9T-hD0Bj31DSnwio-ywh
 https://github.com/BennyQBD/ModernOpenGLTutorial
 
-The image loader is from below:
+Libraries and Software Used:
 public domain JPEG/PNG reader - http://nothings.org/stb_image.c
+GLEW - http://glew.sourceforge.net/
+SDL2 - https://www.libsdl.org/index.php
+GLM - https://glm.g-truc.net/0.9.8/index.html
 
 There were some slight changes to the display class from the tutorial to return an aspect ratio and deal with depth in a slightly different way.
 
