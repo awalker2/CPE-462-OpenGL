@@ -54,8 +54,12 @@ int main(int argc, char **argv)
 
 		//transform.translate(sinCounter, 0, 0);
 		//transform.rotY(counter);
-		transform.rotX(counter);
+		//transform.rotX(counter);
 		//transform.scale(counter, counter, counter);
+
+		camera.setPosVector(0.0, 0, -2.0);
+		//camera.setUpVector(sinCounter, 1.0, 0.0);
+		camera.setForwardVector(sinCounter, cosCounter, 1);
 
 		glm::mat4 temp = transform.getModel();
 
