@@ -6,6 +6,7 @@
 #include "texture.h"
 #include "transform.h"
 #include "camera.h"
+#include "cube.c"
 
 using namespace std;
 
@@ -13,6 +14,14 @@ int main(int argc, char **argv)
 {
 	display display(1200, 720, 8, "OpenGLTest");
 
+	//Code from Charles Bethin
+	vertex vertices[cubeVertices];
+	for (int i = 0; i < cubeVertices; i++) {
+		vertices[i] = vertex(glm::vec3(cubePositions[3 * i], cubePositions[3 * i + 1], cubePositions[3 * i + 2]), glm::vec2(cubeTexels[2 * i], cubeTexels[2 * i]));
+	}
+	//End of code from Charles
+
+	/*Original test object of a pyramid
 	vertex vertices[] = {	vertex(glm::vec3(0.0f, 0.5f, 0.0f), glm::vec2(0, 0)),
 							vertex(glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec2(0.5, 1.0)),
 							vertex(glm::vec3(0.5f, -0.5f, 0.5f), glm::vec2(1, 0)),
@@ -29,6 +38,7 @@ int main(int argc, char **argv)
 							vertex(glm::vec3(0.0f, -0.5f, -0.5f), glm::vec2(0.5, 1.0)),
 							vertex(glm::vec3(0.5f, -0.5f, 0.5f), glm::vec2(1, 0)), 
 						};
+	*/
 
 	mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]));
 	shader shader("./res/basicShader");
@@ -53,13 +63,13 @@ int main(int argc, char **argv)
 		//transform.scale(cosCounter);
 
 		//transform.translate(sinCounter, 0, 0);
-		//transform.rotY(counter);
+		transform.rotY(counter);
 		//transform.rotX(counter);
 		//transform.scale(counter, counter, counter);
 
-		camera.setPosVector(0.0, 0, -2.0);
+		//camera.setPosVector(0.0, 0, -2.0);
 		//camera.setUpVector(sinCounter, 1.0, 0.0);
-		camera.setForwardVector(sinCounter, cosCounter, 1);
+		camera.setForwardVector(0, sinCounter, 1);
 
 		glm::mat4 temp = transform.getModel();
 

@@ -54,7 +54,7 @@ mesh::mesh(vertex* vertices, unsigned int numVertices)
 	glGenBuffers(N_BUFFS, _vertexArrayBuffs);
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexArrayBuffs[POS_VB]);
 	glBufferData(GL_ARRAY_BUFFER, numVertices*sizeof(vertices[0]), vertices, GL_STATIC_DRAW);
-	//Tell the GPU the appropriate offset so ever other entry is a vertex or texture point
+	//Tell the GPU the appropriate offset so every other entry is a vertex or texture point
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(vertices[0]), 0);
 
@@ -65,7 +65,6 @@ mesh::mesh(vertex* vertices, unsigned int numVertices)
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(vertices[0]), (GLvoid*)(sizeof(glm::vec3)));
 
 	glBindVertexArray(0);
-	
 }
 
 mesh::~mesh()
