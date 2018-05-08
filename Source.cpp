@@ -6,20 +6,18 @@
 #include "texture.h"
 #include "transform.h"
 #include "camera.h"
-#include "cube.c"
-
+#include "model.c"
+#include <SDL2\sdl.h>
 using namespace std;
 
 int main(int argc, char **argv)
 {
 	display display(1200, 720, 8, "OpenGLTest");
 
-	//Code from Charles Bethin
 	vertex vertices[cubeVertices];
 	for (int i = 0; i < cubeVertices; i++) {
 		vertices[i] = vertex(glm::vec3(cubePositions[3 * i], cubePositions[3 * i + 1], cubePositions[3 * i + 2]), glm::vec2(cubeTexels[2 * i], cubeTexels[2 * i]));
 	}
-	//End of code from Charles
 
 	/*Original test object of a pyramid
 	vertex vertices[] = {	vertex(glm::vec3(0.0f, 0.5f, 0.0f), glm::vec2(0, 0)),
@@ -54,22 +52,12 @@ int main(int argc, char **argv)
 
 		float sinCounter = sinf(counter);
 		float cosCounter = cosf(counter);
-		
-		//transform.getPos().x = sinCounter;
-		//transform.getRot().z = counter;
-		//transform.setScale(glm::vec3(counter,counter,counter));
-
-		//transform.translate(sinCounter,cosCounter, 0);
-		//transform.scale(cosCounter);
 
 		//transform.translate(sinCounter, 0, 0);
 		transform.rotY(counter);
-		//transform.rotX(counter);
+		transform.rotX(counter);
+		//transform.rotZ(counter);
 		//transform.scale(counter, counter, counter);
-
-		//camera.setPosVector(0.0, 0, -2.0);
-		//camera.setUpVector(sinCounter, 1.0, 0.0);
-		camera.setForwardVector(0, sinCounter, 1);
 
 		glm::mat4 temp = transform.getModel();
 
@@ -78,7 +66,7 @@ int main(int argc, char **argv)
 		shader.update(transform, camera);
 		mesh.Draw();
 
-		display.swapBuffers();
+		display.swapBuffers(camera);
 		counter += 0.01f;
 	}
 

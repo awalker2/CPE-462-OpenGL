@@ -45,27 +45,31 @@ public:
 		_perspective[2][3] = (2 * zNear*zFar) / (zNear - zFar);
 		_perspective[3][2] = -1;
 
-		_position = pos;
-		_forward = glm::vec3(0.0, 0.0, 1);
-		_up = glm::vec3(0.0, 1, 0.0);
+		position = pos;
+		forward = glm::vec3(0.0, 0.0, 1);
+		up = glm::vec3(0.0, 1, 0.0);
 	}
 
 	inline glm::mat4 getViewProjection() const
 	{
-		return glm::transpose(_perspective) * glm::lookAt(_position, _position + _forward, _up);
+		return glm::transpose(_perspective) * glm::lookAt(position, position + forward, up);
 	}
-
+	//Ended up using public variables instead
+	/*
 	//Accessors to set the vectors to move the camera
 	void setUpVector(GLfloat x, GLfloat y, GLfloat z);
 	void setPosVector(GLfloat x, GLfloat y, GLfloat z);
 	void setForwardVector(GLfloat x, GLfloat y, GLfloat z);
-
+	//Getters to get the private variables
+	glm::vec3 getUpVector();
+	glm::vec3 getPosVector();
+	glm::vec3 getForwardVector();
+	*/
+	glm::vec3 position;
+	glm::vec3 forward;
+	glm::vec3 up;
 private:
 	glm::mat4 _perspective = glm::mat4(0.0f);
 	glm::mat4 _view = glm::mat4(0.0f);;
-
-	glm::vec3 _position;
-	glm::vec3 _forward;
-	glm::vec3 _up;
 };
 
