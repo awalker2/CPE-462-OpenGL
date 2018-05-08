@@ -53,9 +53,10 @@ int main(int argc, char **argv)
 		float sinCounter = sinf(counter);
 		float cosCounter = cosf(counter);
 
-		//transform.translate(sinCounter, 0, 0);
+		transform.translate(sinCounter, 0, 0);
 		transform.rotY(counter);
 		transform.rotX(counter);
+		//Unused transforms in demo, but they work
 		//transform.rotZ(counter);
 		//transform.scale(counter, counter, counter);
 

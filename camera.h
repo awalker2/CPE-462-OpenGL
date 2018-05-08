@@ -32,6 +32,8 @@ private:
 
 //This was our implementation of the camera class
 //Projection matrix source: https://unspecified.wordpress.com/2012/06/21/calculating-the-gluperspective-matrix-and-other-opengl-matrix-maths/
+//LookAt matrix source https://stackoverflow.com/questions/21830340/understanding-glmlookat (Sergey K.)
+
 class camera
 {
 public:
@@ -52,6 +54,40 @@ public:
 
 	inline glm::mat4 getViewProjection() const
 	{
+		/*
+		glm::mat4 lookAt = glm::mat4(0.0f);
+		glm::vec3 x;
+		glm::vec3 y;
+		glm::vec3 z;
+
+		z = position - (position + forward);
+		glm::normalize(z);
+		y = up;
+		x = glm::cross(y, z);
+		y = glm::cross(z, x);
+		glm::normalize(x);
+		glm::normalize(y);
+
+		lookAt[0][0] = x.x;
+		lookAt[1][0] = x.y;
+		lookAt[2][0] = x.z;
+		lookAt[3][0] = -glm::dot(x, position);
+		lookAt[0][1] = y.x;
+		lookAt[1][1] = y.y;
+		lookAt[2][1] = y.z;
+		lookAt[3][1] = -glm::dot(y, position);
+		lookAt[0][2] = z.x;
+		lookAt[1][2] = z.y;
+		lookAt[2][2] = z.z;
+		lookAt[3][2] = -glm::dot(z, position);
+		lookAt[0][3] = 0;
+		lookAt[1][3] = 0;
+		lookAt[2][3] = 0;
+		lookAt[3][3] = 1.0f;
+
+		glm::transpose(lookAt);
+		*/
+
 		return glm::transpose(_perspective) * glm::lookAt(position, position + forward, up);
 	}
 	//Ended up using public variables instead
@@ -70,6 +106,6 @@ public:
 	glm::vec3 up;
 private:
 	glm::mat4 _perspective = glm::mat4(0.0f);
-	glm::mat4 _view = glm::mat4(0.0f);;
+	glm::mat4 _view = glm::mat4(0.0f);
 };
 
