@@ -77,8 +77,8 @@ int main(int argc, char **argv)
 		float sinCounter = sinf(counter);
 		float cosCounter = cosf(counter);
 
-		transform.translate(sinCounter, 0, 0);
-		transform.rotY(counter);
+		transform.translate(8*sinCounter, 0, 0);
+		transform.rotY(2*cosCounter);
 		//Unused transforms in demo, but they work
 		//transform.rotX(counter);
 		//transform.rotZ(counter);
