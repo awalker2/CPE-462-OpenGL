@@ -45,7 +45,7 @@ void display::swapBuffers(camera &camera)
 	SDL_GL_SwapWindow(_window);
 
 	SDL_Event event;
-	float increment = 0.05;
+	float increment = 0.1;
 
 	while (SDL_PollEvent(&event))
 	{

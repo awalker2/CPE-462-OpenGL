@@ -1,20 +1,36 @@
-﻿Build started 5/8/2018 4:20:06 PM.
-     1>Project "D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\OpenGL_3Dto2D\OpenGL_3Dto2D.vcxproj" on node 2 (Build target(s)).
+﻿Build started 5/8/2018 10:19:21 PM.
+     1>Project "D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\OpenGL_3Dto2D\OpenGL_3Dto2D.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp camera.cpp display.cpp shader.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt camera.cpp display.cpp mesh.cpp shader.cpp Source.cpp texture.cpp transform.cpp
+         transform.cpp
+         texture.cpp
          Source.cpp
-     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\model.c(2913): warning C4305: 'initializing' : truncation from 'double' to 'const float'
-     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\model.c(5821): warning C4305: 'initializing' : truncation from 'double' to 'const float'
-     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\model.c(8729): warning C4305: 'initializing' : truncation from 'double' to 'const float'
-         Generating Code...
-         Compiling...
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\model.c(119919): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\model.c(239833): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\model.c(359747): warning C4305: 'initializing' : truncation from 'double' to 'const float'
          shader.cpp
-         Generating Code...
-         Skipping... (no relevant changes detected)
+         mesh.cpp
          display.cpp
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\display.cpp(48): warning C4305: 'initializing' : truncation from 'double' to 'float'
          camera.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt model.c stb_image.c
+         stb_image.c
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\stb_image.c(300): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\stb_image.c(362): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\stb_image.c(400): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\stb_image.c(4293): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+         model.c
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\model.c(119919): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\model.c(239833): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\school\semester 5\cpe 462\opengl_3dto2d github\opengl_3dto2d\model.c(359747): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\Debug\OpenGL_3Dto2D.exe" /INCREMENTAL /NOLOGO /LIBPATH:.\lib glew32.lib glew32s.lib SDL2.lib SDL2main.lib SDL2test.lib OpenGL32.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\Debug\OpenGL_3Dto2D.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\Debug\OpenGL_3Dto2D.lib" /MACHINE:X86 Debug\camera.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\Debug\OpenGL_3Dto2D.exe" /INCREMENTAL /NOLOGO /LIBPATH:.\lib glew32.lib glew32s.lib SDL2.lib SDL2main.lib SDL2test.lib OpenGL32.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\Debug\OpenGL_3Dto2D.pdb" /SUBSYSTEM:CONSOLE /STACK:"4194304" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\Debug\OpenGL_3Dto2D.lib" /MACHINE:X86 Debug\camera.obj
          Debug\model.obj
          Debug\display.obj
          Debug\mesh.obj
@@ -24,8 +40,8 @@
          Debug\texture.obj
          Debug\transform.obj
          OpenGL_3Dto2D.vcxproj -> D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\Debug\OpenGL_3Dto2D.exe
-     1>Done Building Project "D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\OpenGL_3Dto2D\OpenGL_3Dto2D.vcxproj" (Build target(s)).
+     1>Done Building Project "D:\School\Semester 5\CPE 462\OpenGL_3Dto2D Github\OpenGL_3Dto2D\OpenGL_3Dto2D.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.59
+Time Elapsed 00:00:11.03

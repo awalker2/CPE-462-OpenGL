@@ -12,15 +12,32 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-	display display(1200, 720, 8, "OpenGLTest");
+	int width;
+	int height;
 
-	vertex vertices[cubeVertices];
-	for (int i = 0; i < cubeVertices; i++) {
-		vertices[i] = vertex(glm::vec3(cubePositions[3 * i], cubePositions[3 * i + 1], cubePositions[3 * i + 2]), glm::vec2(cubeTexels[2 * i], cubeTexels[2 * i]));
+	cout << "Enter width:" << endl;
+	cin >> width;
+	while (cin.fail() || (0 >= width && width <= 3840)) 
+	{
+		cout << "Width must be a valid integer 0-3840" << endl;
+		cin.clear();
+		cin.ignore(256, '\n');
+		cout << "Enter width:" << endl;
+		cin >> width;
+	}
+	cout << "Enter height:" << endl;
+	cin >> height;
+	while (cin.fail() || (0 >= height && height <= 2160))
+	{
+		cout << "Height must be a valid integer 0-2160" << endl;
+		cin.clear();
+		cin.ignore(256, '\n');
+		cout << "Enter height:" << endl;
+		cin >> height;
 	}
 
 	/*Original test object of a pyramid
-	vertex vertices[] = {	vertex(glm::vec3(0.0f, 0.5f, 0.0f), glm::vec2(0, 0)),
+	vertex vertices[] = {	vertex(glm::vec3(0.0f, 0.5f,1 0.0f), glm::vec2(0, 0)),
 							vertex(glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec2(0.5, 1.0)),
 							vertex(glm::vec3(0.5f, -0.5f, 0.5f), glm::vec2(1, 0)),
 							
@@ -38,11 +55,18 @@ int main(int argc, char **argv)
 						};
 	*/
 
+	display display(width, height, 8, "OpenGLTest");
+
+	vertex vertices[cubeVertices];
+	for (int i = 0; i < cubeVertices; i++) {
+		vertices[i] = vertex(glm::vec3(cubePositions[3 * i], cubePositions[3 * i + 1], cubePositions[3 * i + 2]), glm::vec2(cubeTexels[2 * i], 1 - cubeTexels[2 * i + 1]));
+	}
+
 	mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]));
 	shader shader("./res/basicShader");
-	texture texture("./res/bricks.jpg");
+	texture texture("./res/dragon.jpeg");
 	transform transform;
-	camera camera(glm::vec3(0, 0, -3), 70.0f, display.aspect, 0.01f, 1000.0f);
+	camera camera(glm::vec3(0, 7, -10), 70.0f, display.aspect, 0.01f, 1000.0f);
 
 	float counter = 0.0f;
 
@@ -55,8 +79,8 @@ int main(int argc, char **argv)
 
 		transform.translate(sinCounter, 0, 0);
 		transform.rotY(counter);
-		transform.rotX(counter);
 		//Unused transforms in demo, but they work
+		//transform.rotX(counter);
 		//transform.rotZ(counter);
 		//transform.scale(counter, counter, counter);
 

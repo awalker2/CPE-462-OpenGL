@@ -87,7 +87,6 @@ public:
 
 		glm::transpose(lookAt);
 		*/
-
 		return glm::transpose(_perspective) * glm::lookAt(position, position + forward, up);
 	}
 	//Ended up using public variables instead
