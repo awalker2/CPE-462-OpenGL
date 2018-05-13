@@ -37,6 +37,17 @@ private:
 class camera
 {
 public:
+	//Ended up using public variables instead
+	/*
+	//Accessors to set the vectors to move the camera
+	void setUpVector(GLfloat x, GLfloat y, GLfloat z);
+	void setPosVector(GLfloat x, GLfloat y, GLfloat z);
+	void setForwardVector(GLfloat x, GLfloat y, GLfloat z);
+	//Getters to get the private variables
+	glm::vec3 getUpVector();
+	glm::vec3 getPosVector();
+	glm::vec3 getForwardVector();
+	*/
 	camera(const glm::vec3& pos, float fov, float aspect, float zNear, float zFar)
 	{
 		//Manual calculation of perspective matrix
@@ -55,11 +66,11 @@ public:
 	inline glm::mat4 getViewProjection() const
 	{
 		/*
+		Attempt at manual lookAt matrix, had issues at more extreme distances
 		glm::mat4 lookAt = glm::mat4(0.0f);
 		glm::vec3 x;
 		glm::vec3 y;
 		glm::vec3 z;
-
 		z = position - (position + forward);
 		glm::normalize(z);
 		y = up;
@@ -67,7 +78,6 @@ public:
 		y = glm::cross(z, x);
 		glm::normalize(x);
 		glm::normalize(y);
-
 		lookAt[0][0] = x.x;
 		lookAt[1][0] = x.y;
 		lookAt[2][0] = x.z;
@@ -84,22 +94,10 @@ public:
 		lookAt[1][3] = 0;
 		lookAt[2][3] = 0;
 		lookAt[3][3] = 1.0f;
-
 		glm::transpose(lookAt);
 		*/
 		return glm::transpose(_perspective) * glm::lookAt(position, position + forward, up);
 	}
-	//Ended up using public variables instead
-	/*
-	//Accessors to set the vectors to move the camera
-	void setUpVector(GLfloat x, GLfloat y, GLfloat z);
-	void setPosVector(GLfloat x, GLfloat y, GLfloat z);
-	void setForwardVector(GLfloat x, GLfloat y, GLfloat z);
-	//Getters to get the private variables
-	glm::vec3 getUpVector();
-	glm::vec3 getPosVector();
-	glm::vec3 getForwardVector();
-	*/
 	glm::vec3 position;
 	glm::vec3 forward;
 	glm::vec3 up;
